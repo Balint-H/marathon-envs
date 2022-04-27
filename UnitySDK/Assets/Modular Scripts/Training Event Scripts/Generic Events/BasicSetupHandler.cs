@@ -55,8 +55,6 @@ public class BasicSetupHandler : DelayableEventHandler
 		referenceAnimationParent.position = resetOrigin;
 
 		if (shouldResetRotation) referenceAnimationParent.rotation = resetRotation;
-
-
 		kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
 
         if (framesToWait > 0)

@@ -20235,7 +20235,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 2d99f1d0ef0c3bc4e8419f9d9b4e1764, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: DReCon-Mj
@@ -20258,7 +20258,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 200
+  MaxStep: 400
   fixedDeltaTime: 0.016666668
   actionSmoothingBeta: 0.2
   maxStep: 0
@@ -20940,6 +20940,8 @@ MonoBehaviour:
   gearScale: 1.2
   controlLimitScale: 0.01
   armatureScale: 0.6666667
+  conAffinity: 0
+  conType: 0
 --- !u!1 &6427866368482140471
 GameObject:
   m_ObjectHideFlags: 0
