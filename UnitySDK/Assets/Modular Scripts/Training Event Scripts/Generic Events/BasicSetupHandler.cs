@@ -31,6 +31,9 @@ public class BasicSetupHandler : DelayableEventHandler
 	[SerializeField]
 	bool shouldResetRotation;
 
+	[SerializeField]
+	bool shouldResetPosition = true;
+
 	Quaternion resetRotation;
 
 	IResettable kineticChainToReset;
@@ -52,7 +55,7 @@ public class BasicSetupHandler : DelayableEventHandler
 		//First we move the animation back to the start 
 
 		//Debug.Log("Resetting Animation Parent!");
-		referenceAnimationParent.position = resetOrigin;
+		if (shouldResetPosition) referenceAnimationParent.position = resetOrigin;
 
 		if (shouldResetRotation) referenceAnimationParent.rotation = resetRotation;
 		kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
@@ -63,14 +66,14 @@ public class BasicSetupHandler : DelayableEventHandler
             return;
         }
 
-        //Then we move the ragdoll as well, still in different joint orientations, but overlapping roots.
-        kineticChainToReset.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
+		//Then we move the ragdoll as well, still in different joint orientations, but overlapping roots.
+		if (shouldResetPosition) kineticChainToReset.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
 
         //We copy the rotations, velocities and angular velocities from the kinematic reference (which has the "same" pose as the animation).
         kineticChainToReset.CopyKinematicsFrom(kinematicRig);
 
-        //We teleport the kinematic reference as well, so velocities are not tracked in the move. Since we don't need to change rotation we use to position only version.
-        kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
+		//We teleport the kinematic reference as well, so velocities are not tracked in the move. Since we don't need to change rotation we use to position only version.
+		if (shouldResetPosition)  kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
     }
 
 	protected override IEnumerator DelayedExecution(object sender, EventArgs eventArgs)

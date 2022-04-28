@@ -51,10 +51,11 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
         OnAgentInitialize();
     }
 
-    void OnAnimatorIK(int k)
+    public void OnAnimatorIK(int k)
     {
         TrackKinematics();
     }
+
 
     public void OnAgentInitialize()
     {
@@ -65,6 +66,7 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
 
         mjMocapBodies = riggedTransforms.Select(t => t.GetComponent<MjMocapBody>()).ToList();
         bodies = ragdollRoot.GetComponentsInChildren<MjBody>().ToList();
+        Debug.Log(string.Join(", ", trackedTransforms.Select(t => t.name)));
 
     }
 
