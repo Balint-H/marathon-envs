@@ -21,6 +21,9 @@ public class DReConRewardSource : RewardSource
     [SerializeField]
     private GameObject simulationHead;
 
+    [SerializeField]
+    private bool useHeightOnly;
+
     private IKinematic kinHead;
     private IKinematic simHead;
 
@@ -57,7 +60,8 @@ public class DReConRewardSource : RewardSource
         comVDiff *= comVDiff; //in old implementation
 
         //float eFall = Mathf.Clamp01(1.3f - 2.4f * (fSim.WorldToCharacter(simHead.CenterOfMass) - fKin.WorldToCharacter(kinHead.CenterOfMass)).magnitude);
-        float eFall = Mathf.Clamp01(1.3f - 1.4f * Mathf.Abs(simHead.CenterOfMass.y - kinHead.CenterOfMass.y));
+       
+        float eFall = useHeightOnly? Mathf.Clamp01(1.3f - 1.4f * Mathf.Abs(simHead.CenterOfMass.y - kinHead.CenterOfMass.y)) : Mathf.Clamp01(1.3f - 1.4f * (fSim.WorldToCharacter(simHead.CenterOfMass) - fKin.WorldToCharacter(kinHead.CenterOfMass)).magnitude);
 
         var reward = eFall * (Mathf.Exp(-7.37f / nBodies * positionDiff)      //7.37 in old implementation
                         + Mathf.Exp(-1f / nBodies * velocityDiff)       //1 in old implementation

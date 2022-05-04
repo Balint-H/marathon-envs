@@ -46,10 +46,6 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
 
     public Transform RagdollRoot { get => ragdollRoot; }
 
-    public void Awake()
-    {
-        OnAgentInitialize();
-    }
 
     public void OnAnimatorIK(int k)
     {
@@ -66,8 +62,6 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
 
         mjMocapBodies = riggedTransforms.Select(t => t.GetComponent<MjMocapBody>()).ToList();
         bodies = ragdollRoot.GetComponentsInChildren<MjBody>().ToList();
-        Debug.Log(string.Join(", ", trackedTransforms.Select(t => t.name)));
-
     }
 
     public unsafe void TrackKinematics()

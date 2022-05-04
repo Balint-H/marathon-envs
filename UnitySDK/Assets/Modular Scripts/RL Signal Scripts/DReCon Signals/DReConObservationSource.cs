@@ -115,6 +115,19 @@ namespace DReCon
             fSim.Draw();
             Gizmos.color = Color.magenta;
             DrawBodyPositonDifferences(fKin, fSim);
+
+            Vector3 kinCOMV = fKin.WorldDirectionToCharacter(kinChain.CenterOfMassVelocity);
+            Vector3 simCOMV = fSim.WorldDirectionToCharacter(simChain.CenterOfMassVelocity);
+
+            Vector3 inputDesiredVelocity = fKin.WorldDirectionToCharacter(userInputs.GetDesiredVelocity());
+
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawRay(simChain.CenterOfMass.Horizontal3D() + Vector3.up / 10f, fSim.CharacterDirectionToWorld(simCOMV)/10f);
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(simChain.CenterOfMass.Horizontal3D() + Vector3.up / 10f, fSim.CharacterDirectionToWorld(kinCOMV)/10f);
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(simChain.CenterOfMass.Horizontal3D()+Vector3.up/10f, fSim.CharacterDirectionToWorld(inputDesiredVelocity.Horizontal3D())/10f);
+
         }
 
         private void DrawBodyPositonDifferences(ReferenceFrame fKin, ReferenceFrame fSim)

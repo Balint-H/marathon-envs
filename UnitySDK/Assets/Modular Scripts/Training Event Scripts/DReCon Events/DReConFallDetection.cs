@@ -13,9 +13,15 @@ namespace DReCon
         [SerializeField]
         private Transform SimulationHead;
 
+        [SerializeField]
+        private bool useHeigthOnly;
+
+        [SerializeField]
+        float maxDistance;
+
         private void Update()
         {
-            if ((KinematicHead.position - SimulationHead.position).magnitude > 1f) OnTrainingEvent(EventArgs.Empty);
+            if ( useHeigthOnly?  (KinematicHead.position - SimulationHead.position).magnitude > maxDistance : Mathf.Abs(KinematicHead.position.y - SimulationHead.position.y) > maxDistance ) OnTrainingEvent(EventArgs.Empty);
         }
     }
 }

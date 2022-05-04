@@ -19365,6 +19365,7 @@ MonoBehaviour:
   kinematicRigObject: {fileID: 6427866368016156489}
   resetOrigin: {x: 0, y: 0, z: 0}
   shouldResetRotation: 1
+  shouldResetPosition: 1
 --- !u!1 &6427866367434575516
 GameObject:
   m_ObjectHideFlags: 0
@@ -20235,7 +20236,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 2d99f1d0ef0c3bc4e8419f9d9b4e1764, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: DReCon-Mj
@@ -20261,7 +20262,7 @@ MonoBehaviour:
   MaxStep: 400
   fixedDeltaTime: 0.016666668
   actionSmoothingBeta: 0.2
-  maxStep: 0
+  maxStep: 400
   kinematicRigObject: {fileID: 6427866368016156489}
   observationSignal: {fileID: 9089678135483245978}
   rewardSignal: {fileID: 2442860521740338249}
@@ -21933,6 +21934,7 @@ MonoBehaviour:
   simulationTransform: {fileID: 3622084345688742273}
   kinematicHead: {fileID: 3622084345438594896}
   simulationHead: {fileID: 3622084345709052400}
+  useHeightOnly: 0
 --- !u!1 &7500556436015578374
 GameObject:
   m_ObjectHideFlags: 0

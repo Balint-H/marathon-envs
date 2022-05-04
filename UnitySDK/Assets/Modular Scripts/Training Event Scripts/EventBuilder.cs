@@ -32,6 +32,7 @@ public class EventBuilder : MonoBehaviour
 
     private void Awake()
     {
+        if (!isActiveAndEnabled) return;
         ActivateEvents();
     }
 

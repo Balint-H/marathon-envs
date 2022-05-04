@@ -16,6 +16,9 @@ public class RewardCounter : TrainingEventHandler
     private float averageReward;
     private int numberOfSteps;
 
+    private float episodeSum;
+    private int numEpisodes;
+
     private void Awake()
     {
         eventsAgent = agent as IEventsAgent;
@@ -37,11 +40,20 @@ public class RewardCounter : TrainingEventHandler
 
     public void PrintEvents(object sender, EventArgs args)
     {
-        
-        Debug.Log($"Total reward: {rewardSum}\nAverage reward per action: {averageReward}");
+        numEpisodes++;
+
+        Debug.Log($"Total reward: {rewardSum}\nAverage reward per episode: {episodeSum / numEpisodes}\nAverage reward per action: {averageReward}");
+
+        episodeSum += rewardSum;
 
         rewardSum = 0;
         numberOfSteps = 0;
         averageReward = 0;
+
+        
+        
+
+
+
     }
 }
