@@ -8,20 +8,29 @@ namespace DReCon
     public class DReConFallDetection : TrainingEvent
     {
         [SerializeField]
+        DReConAgent agent;
+
+        [SerializeField]
         private Transform KinematicHead;
 
         [SerializeField]
         private Transform SimulationHead;
 
         [SerializeField]
-        private bool useHeigthOnly;
+        private bool useHeightOnly;
 
         [SerializeField]
         float maxDistance;
 
-        private void Update()
+        public override void SubscribeHandler(EventHandler subscriber)
         {
-            if ( useHeigthOnly?  (KinematicHead.position - SimulationHead.position).magnitude > maxDistance : Mathf.Abs(KinematicHead.position.y - SimulationHead.position.y) > maxDistance ) OnTrainingEvent(EventArgs.Empty);
+            agent.onActionHandler += CheckFall;
+            base.SubscribeHandler(subscriber);
+        }
+
+        private void CheckFall(object sender, AgentEventArgs args)
+        {
+            if ( useHeightOnly?  Mathf.Abs(KinematicHead.position.y - SimulationHead.position.y) > maxDistance : (KinematicHead.position - SimulationHead.position).magnitude > maxDistance ) OnTrainingEvent(EventArgs.Empty);
         }
     }
 }

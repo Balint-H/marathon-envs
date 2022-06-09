@@ -13,5 +13,5 @@ public abstract class Muscles: MonoBehaviour
 
     public abstract float[] GetActionsFromState();
 
-    public virtual void OnAgentInitialize() { }
+    public virtual void OnAgentInitialize(DReConAgent agent) { }
 }

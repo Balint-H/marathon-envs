@@ -2131,3 +2131,705 @@ WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Ti
 Mon May  2 15:05:29 2022
 WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1200.
 
+Sun May 15 12:56:43 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 23. The simulation is unstable. Time = 18.0333.
+
+Sun May 15 12:58:39 2022
+WARNING: Pre-allocated contact buffer is full. Increase nconmax above 100. Time = 1.3000.
+
+Sun May 15 13:00:34 2022
+WARNING: Pre-allocated contact buffer is full. Increase nconmax above 100. Time = 79.5000.
+
+Sun May 15 13:00:54 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 50. The simulation is unstable. Time = 98.2167.
+
+Sun May 15 13:26:26 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 29.6667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated contact buffer is full. Increase nconmax above 100. Time = 0.0500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.0500.
+
+Sun May 15 15:23:13 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 140. The simulation is unstable. Time = 0.0667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.0667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.0833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.1000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.1167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.1333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.1500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.1667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.1833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.2000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.2167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.2333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.2500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.2667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.2833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.3000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.3167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.3333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.3500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.3667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.3833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.4000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.4167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.4333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.4500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.4667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.4833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.5000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.5167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.5333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.5500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.5667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.5833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.6000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.6167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.6333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.6500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.6667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.6833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.7000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.7167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.7333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.7500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.7667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.7833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.8000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.8167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.8333.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.8500.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.8667.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.8833.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.9000.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.9167.
+
+Sun May 15 15:23:13 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.9333.
+
+Sun May 15 15:24:13 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 146. The simulation is unstable. Time = 0.0667.
+
+Sun May 15 15:35:56 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 146. The simulation is unstable. Time = 0.0667.
+
+Sun May 15 15:37:35 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 146. The simulation is unstable. Time = 0.0667.
+
+Sun May 15 15:38:22 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 1.1833.
+
+Sun May 15 15:41:08 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 146. The simulation is unstable. Time = 0.0667.
+
+Sun May 15 15:42:20 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 135. The simulation is unstable. Time = 0.0833.
+
+Sun May 15 15:42:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 27. The simulation is unstable. Time = 1.0000.
+
+Sun May 15 15:42:29 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 111. The simulation is unstable. Time = 0.0833.
+
+Sun May 15 15:47:33 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 136. The simulation is unstable. Time = 2.0833.
+
+Sun May 15 15:47:44 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 135. The simulation is unstable. Time = 2.6167.
+
+Sun May 15 15:48:21 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 136. The simulation is unstable. Time = 1.8500.
+
+Sun May 15 15:48:42 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 135. The simulation is unstable. Time = 2.2000.
+
+Sun May 15 15:48:59 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 135. The simulation is unstable. Time = 3.1167.
+
+Sun May 15 15:49:09 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 135. The simulation is unstable. Time = 2.3667.
+
+Sun May 15 15:49:22 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 136. The simulation is unstable. Time = 2.7667.
+
+Sun May 15 15:50:14 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 136. The simulation is unstable. Time = 2.0833.
+
+Sun May 15 16:33:20 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 58.0500.
+
+Sun May 15 16:36:34 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 135. The simulation is unstable. Time = 0.0667.
+
+Sun May 15 16:36:48 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 135. The simulation is unstable. Time = 1.3000.
+
+Mon May 16 13:07:37 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.1500.
+
+Mon May 16 13:07:37 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.1500.
+
+Mon May 16 13:07:37 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.1500.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 13:08:56 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:08:56 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:08:56 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:08:56 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:08:56 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:08:56 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:09:07 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:09:07 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:09:07 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:09:07 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:09:07 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:09:07 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:39 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:39 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:39 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:39 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:39 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:39 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 1. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:10:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 7. The simulation is unstable. Time = 0.0900.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 13:14:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 2. The simulation is unstable. Time = 0.0750.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Mon May 16 15:25:28 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.0650.
+
+Tue May 17 17:27:36 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 56. The simulation is unstable. Time = 106.3167.
+
+Thu May 19 10:42:42 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 4. The simulation is unstable. Time = 0.1100.
+
+Thu May 19 10:42:42 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 4. The simulation is unstable. Time = 0.1100.
+
+Thu May 19 10:42:42 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 4. The simulation is unstable. Time = 0.1100.
+
+Thu May 19 10:42:42 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 4. The simulation is unstable. Time = 0.1100.
+
+Thu May 19 10:42:42 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 4. The simulation is unstable. Time = 0.1100.
+
+Thu May 19 10:47:23 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 2.2350.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:34:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 3. The simulation is unstable. Time = 0.0700.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:36:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 39. The simulation is unstable. Time = 0.1000.
+
+Thu May 19 15:38:57 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1500.
+
+Thu May 19 15:38:57 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1500.
+
+Thu May 19 15:38:57 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1500.
+
+Thu May 19 15:38:57 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1500.
+
+Thu May 19 15:38:57 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1500.
+
+Thu May 19 15:38:57 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.1500.
+
+Thu May 19 16:08:01 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 21.7500.
+
+Mon May 30 12:04:36 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 1.5500.
+
+Mon May 30 12:04:36 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 1.5667.
+
+Mon May 30 12:05:08 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 34. The simulation is unstable. Time = 1.5167.
+
+Mon May 30 12:13:50 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 109. The simulation is unstable. Time = 2.5500.
+
+Mon May 30 12:52:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 109. The simulation is unstable. Time = 2.5500.
+
+Mon May 30 12:54:16 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 2.5500.
+
+Mon May 30 12:56:18 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 5.7000.
+
+Mon May 30 13:15:23 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 109. The simulation is unstable. Time = 2.5500.
+
+Mon May 30 13:18:02 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 34. The simulation is unstable. Time = 37.0000.
+
+Mon May 30 13:19:46 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 106. The simulation is unstable. Time = 1.1500.
+
+Mon May 30 13:20:26 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 106. The simulation is unstable. Time = 1.1500.
+
+Mon May 30 13:20:53 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 1.1000.
+
+Mon May 30 13:21:15 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 1.1000.
+
+Mon May 30 13:22:05 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 170. The simulation is unstable. Time = 31.4167.
+
+Mon May 30 13:22:30 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 170. The simulation is unstable. Time = 8.6500.
+
+Mon May 30 13:22:47 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 170. The simulation is unstable. Time = 2.1000.
+
+Mon May 30 13:23:01 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 170. The simulation is unstable. Time = 3.4667.
+
+Mon May 30 13:28:05 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 170. The simulation is unstable. Time = 10.4500.
+
+Mon May 30 13:29:55 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 0.4167.
+
+Mon May 30 13:58:25 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 1.5167.
+
+Mon May 30 13:59:02 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.8000.
+
+Mon May 30 13:59:10 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.3333.
+
+Mon May 30 13:59:30 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.7667.
+
+Mon May 30 14:01:43 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.4667.
+
+Mon May 30 14:02:11 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.1167.
+
+Mon May 30 14:02:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 25. The simulation is unstable. Time = 0.6167.
+
+Mon May 30 14:02:31 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 109. The simulation is unstable. Time = 0.1167.
+
+Mon May 30 14:03:05 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 2.6833.
+
+Mon May 30 14:03:11 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 0.4333.
+
+Mon May 30 14:04:17 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 102. The simulation is unstable. Time = 21.6667.
+
+Mon May 30 14:07:40 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.4500.
+
+Mon May 30 14:07:40 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.2333.
+
+Mon May 30 14:10:48 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 1.2000.
+
+Mon May 30 14:15:53 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 300. The simulation is unstable. Time = 4.4000.
+
+Mon May 30 14:18:23 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 1.2333.
+
+Mon May 30 14:18:31 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 1.1667.
+
+Mon May 30 14:18:32 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 173. The simulation is unstable. Time = 0.1833.
+
+Mon May 30 14:18:33 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 370. The simulation is unstable. Time = 0.2333.
+
+Mon May 30 14:18:34 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 156. The simulation is unstable. Time = 0.2167.
+
+Mon May 30 14:18:39 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 354. The simulation is unstable. Time = 0.1333.
+
+Mon May 30 14:18:40 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 0.1167.
+
+Mon May 30 14:18:41 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 0.1167.
+
+Mon May 30 14:18:41 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 0.1167.
+
+Mon May 30 14:18:42 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 151. The simulation is unstable. Time = 0.0667.
+
+Mon May 30 14:20:31 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 0.3333.
+
+Mon May 30 14:21:03 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 164. The simulation is unstable. Time = 8.4667.
+
+Mon May 30 14:21:33 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 150. The simulation is unstable. Time = 3.0667.
+
+Mon May 30 14:58:51 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 52. The simulation is unstable. Time = 82.0000.
+
+Mon May 30 15:03:19 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 38.3833.
+
+Mon May 30 15:03:19 2022
+WARNING: Unknown warning type Time = 38.3833.
+
+Mon May 30 15:03:19 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 47. The simulation is unstable. Time = 38.3833.
+
+Tue May 31 23:47:30 2022
+WARNING: Unknown warning type Time = 202.4000.
+
+Tue May 31 23:47:30 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 47. The simulation is unstable. Time = 202.4000.
+
+Thu Jun  2 17:27:14 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 500. Time = 0.0000.
+
+Thu Jun  2 17:29:16 2022
+WARNING: Pre-allocated constraint buffer is full. Increase njmax above 1000. Time = 0.3500.
+
+Thu Jun  2 17:29:16 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 0. The simulation is unstable. Time = 0.3500.
+
+Wed Jun  8 12:21:23 2022
+WARNING: Nan, Inf or huge value in QACC at DOF 9. The simulation is unstable. Time = 22.5833.
+

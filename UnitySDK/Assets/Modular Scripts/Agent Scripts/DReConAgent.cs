@@ -83,7 +83,7 @@ public class DReConAgent : Agent, IRememberPreviousActions, IEventsAgent
         }
 
         if (ragDollMuscles == null) ragDollMuscles = GetComponent<Muscles>();
-        ragDollMuscles.OnAgentInitialize();
+        ragDollMuscles.OnAgentInitialize(this);
         previousActions = ragDollMuscles.GetActionsFromState();
     }
 

@@ -34,9 +34,9 @@ namespace Mujoco
             return actuators.Zip(biasedScales, (a, bs) => a.Control/bs).ToArray();
         }
 
-        public override void OnAgentInitialize()
+        public override void OnAgentInitialize(DReConAgent agent)
         {
-            base.OnAgentInitialize();
+            base.OnAgentInitialize(agent);
 
             biasedScales = actuators.Select(a => BiasedScale.ForActuator(a, biasActions)).ToList();
         }

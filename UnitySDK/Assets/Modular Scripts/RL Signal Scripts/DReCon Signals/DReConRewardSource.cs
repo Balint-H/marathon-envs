@@ -119,6 +119,7 @@ public class DReConRewardSource : RewardSource
 
         private IEnumerable<Quaternion> LocalRotations { get => colliders.Select(col => col.transform.parent.localRotation); }
 
+
         public int Count { get => colliders.Count; }
 
         public BoundingBoxChain(Transform chainRoot)

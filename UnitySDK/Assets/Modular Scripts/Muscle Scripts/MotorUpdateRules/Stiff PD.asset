@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Stiff PD
   m_EditorClassIdentifier: 
   gains:
-  - 90
-  - 3
+  - 42
+  - 0.9

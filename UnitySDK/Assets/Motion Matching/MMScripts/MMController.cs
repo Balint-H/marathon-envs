@@ -42,7 +42,7 @@ public readonly struct RootProjection
 
 }
 
-public class MMController : MonoBehaviour
+public class MMController : TrainingEventHandler
 {
     MMAnimator animator;
     [SerializeField]
@@ -73,6 +73,11 @@ public class MMController : MonoBehaviour
 
     [SerializeField]
     MjKinematicRig rig;
+
+    [SerializeField]
+    bool updateAlone;
+
+    public override EventHandler Handler { get => StepOnTrigger; }
 
     public RootProjection CurrentReferenceFrame
     {
@@ -111,7 +116,7 @@ public class MMController : MonoBehaviour
         //Don't need to instantiate as m_anim is just a struct
         animator.Configure(model.GetChild(0).gameObject.AddComponent<UnityEngine.Animator>(), matchingDataset.motionList.Select(x => x.clip).Concat(new[]{idleAnim}).ToList(), avatar);
         motionMatcher = new MotionMatcher(matchingDataset, settings.weights, settings.maxVelocity);
-        inertializer?.Initialize(fauxRoot, blendTime);
+        if (inertializer) inertializer.Initialize(fauxRoot, blendTime);
         matchDelayCountdown = 0;
     }
 
@@ -135,36 +140,14 @@ public class MMController : MonoBehaviour
         animator.Destroy();
     }
 
-    private void FixedUpdate()
+    public void StepOnTrigger(object sender, EventArgs args)
     {
-        if (transitionState != TransitionState.Playing) return;
-        matchDelayCountdown = ++matchDelayCountdown % settings.skipFactor;
-        if (matchDelayCountdown == 0)
-        {
-            RootProjection curRefFrame = CurrentReferenceFrame;
-            var inputFeatures = input.CurrentTrajectoryAndDirection.Select(v => curRefFrame.Convert(v)).ToList();
-
-            if ((inputFeatures[0] - inputFeatures[1]).magnitude < idleLimit)
-            {
-                foundFrame = new MotionMatcher.MMFrame(animator.ClipCount - 1, 0);
-                transitionState = TransitionState.QueueTransition;
-            }
-            else
-            {
-                var queryFrame = CurFrame;
-                if (queryFrame.ClipIdx == animator.ClipCount - 1) queryFrame = settings.StartingFrame;
-                foundFrame = motionMatcher.Match(inputFeatures, queryFrame);
-
-                if (!foundFrame.IsClose(CurFrame, settings.skipTolerance))
-                {
-                    transitionState = TransitionState.QueueTransition;
-                }
-            }
-        }
+        Evaluate(Time.fixedDeltaTime);
     }
 
-    private void LateUpdate()
+    private void Evaluate(float dT)
     {
+        animator.Evaluate(dT);
 
         switch (transitionState)
         {
@@ -195,7 +178,7 @@ public class MMController : MonoBehaviour
 
             case TransitionState.Playing:
                 {
-                    
+
                     break;
 
                 }
@@ -208,10 +191,42 @@ public class MMController : MonoBehaviour
                 }
         }
 
-        
-
-        inertializer?.BlendStep();
+        if (inertializer) inertializer.BlendStep(dT);
         rig.TrackKinematics();
+
+        if (transitionState != TransitionState.Playing) return;
+        matchDelayCountdown = ++matchDelayCountdown % settings.skipFactor;
+        if (matchDelayCountdown == 0)
+        {
+            RootProjection curRefFrame = CurrentReferenceFrame;
+            var inputFeatures = input.CurrentTrajectoryAndDirection.Select(v => curRefFrame.Convert(v)).ToList();
+
+            if ((inputFeatures[0] - inputFeatures[1]).magnitude < idleLimit)
+            {
+                foundFrame = new MotionMatcher.MMFrame(animator.ClipCount - 1, 0);
+                transitionState = TransitionState.QueueTransition;
+            }
+            else
+            {
+                var queryFrame = CurFrame;
+                if (queryFrame.ClipIdx == animator.ClipCount - 1) queryFrame = settings.StartingFrame;
+                foundFrame = motionMatcher.Match(inputFeatures, queryFrame);
+
+                if (!foundFrame.IsClose(CurFrame, settings.skipTolerance))
+                {
+                    transitionState = TransitionState.QueueTransition;
+                }
+            }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (updateAlone) Evaluate(Time.fixedDeltaTime);
+    }
+
+    private void LateUpdate()
+    { 
 
     }
 

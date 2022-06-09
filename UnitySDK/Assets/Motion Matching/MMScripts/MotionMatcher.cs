@@ -69,7 +69,7 @@ public class MotionMatcher
             }
         }
 
-        return frameMap[minIdx];
+        return frameMap[minIdx+1];
     }
 
     public float[] BuildQuery(IEnumerable<Vector2> trajInput, MMFrame sourceFrame)

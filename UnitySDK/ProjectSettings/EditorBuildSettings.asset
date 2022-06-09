@@ -20,7 +20,31 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/MuJoCo/MjDReConSceneReWork.unity
     guid: 52ff6027f4501cf4aa233fe679124890
-  - enabled: 1
+  - enabled: 0
     path: Assets/MuJoCo/MMScene.unity
     guid: 6f73f7d66414e8a42a2e836d775afa5a
+  - enabled: 1
+    path: Assets/MuJoCo/WalkScene.unity
+    guid: 213845dedb00ccd489fdb1909352ff32
+  - enabled: 0
+    path: Assets/MuJoCo/MMScene_Stiff.unity
+    guid: a946f14c7b06b5544922d6ce9396d335
+  - enabled: 0
+    path: Assets/MuJoCo/Scenes/Hand.unity
+    guid: 13ab6558b24379b459177555027ab93a
+  - enabled: 0
+    path: Assets/MuJoCo/MMScene_DoF.unity
+    guid: 12602aa3a4531b04a96ca285f647f9ac
+  - enabled: 0
+    path: Assets/MuJoCo/MMScene_DoF2.unity
+    guid: 6074760848d0a6a47b2a2806f36def19
+  - enabled: 0
+    path: Assets/MuJoCo/MMScene_DoF_Inference.unity
+    guid: a25fba51a831ec3438437b64464d2385
+  - enabled: 0
+    path: Assets/MuJoCo/MMScene_Compensation.unity
+    guid: 3a28d6849f9eaaf4894f71ffece018d6
+  - enabled: 0
+    path: Assets/MuJoCo/MMScene_Compensation_Multi.unity
+    guid: 0af74bb536171544788f4968e01b84e7
   m_configObjects: {}

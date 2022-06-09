@@ -22,8 +22,10 @@ public struct MMAnimator
 	{
 		animator.applyRootMotion = true;
 		animator.avatar = avatar;
+		animator.updateMode = AnimatorUpdateMode.AnimatePhysics;
+		animator.cullingMode = AnimatorCullingMode.AlwaysAnimate;
 		Graph = PlayableGraph.Create();
-		Graph.SetTimeUpdateMode(DirectorUpdateMode.GameTime);
+		Graph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
 		Mixer = AnimationMixerPlayable.Create(Graph, sourceClips.Count);
 
 		CurrentClip = nClipIdx;
@@ -112,5 +114,9 @@ public struct MMAnimator
 		clip.SetTime(dProg * clip.GetDuration());
 	}
 
+	public void Evaluate(float dT)
+    {
+		Graph.Evaluate(dT);
+    }
 
 }

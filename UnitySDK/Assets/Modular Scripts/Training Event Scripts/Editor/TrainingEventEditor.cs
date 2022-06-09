@@ -21,7 +21,9 @@ public class TrainingEventEditor : Editor
 
         if (GUILayout.Button("Manually Trigger"))
         {
-            TrainingEvent t = target as TrainingEvent;
+            ManualEvent t = target as ManualEvent;
+
+            if(t.defaultHandler) t.defaultHandler.Handler?.Invoke(this, System.EventArgs.Empty);
 
             t.ManuallyTrigger(System.EventArgs.Empty);
         }

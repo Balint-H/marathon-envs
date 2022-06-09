@@ -19,7 +19,7 @@ namespace Mujoco
 
         private void Awake()
         {
-            OnAgentInitialize();
+            OnAgentInitialize(null);
         }
 
         public override int ActionSpaceSize => actuatorRoot.GetComponentsInChildren<MjActuator>().ToList().Count;
@@ -37,6 +37,6 @@ namespace Mujoco
             return actuatorRoot.GetComponentsInChildren<MjActuator>().Select(a => a.Control).ToArray();
         }
 
-        public override void OnAgentInitialize() { actuators = Actuators; }
+        public override void OnAgentInitialize(DReConAgent agent) { actuators = Actuators; }
     }
 }

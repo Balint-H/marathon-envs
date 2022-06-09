@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PD
   m_EditorClassIdentifier: 
   gains:
-  - 36
-  - 0.7
+  - 34
+  - 0.1

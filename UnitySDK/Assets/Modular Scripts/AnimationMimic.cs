@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-public class AnimationMimic : MonoBehaviour
+public class AnimationMimic : TrainingEvent
 {
     // Start is called before the first frame update
     [SerializeField]
@@ -13,13 +13,16 @@ public class AnimationMimic : MonoBehaviour
     [SerializeField]
     Transform sourceHierarchyRoot;
 
+    [SerializeField]
+    string prefix;
+
     IReadOnlyList<Tuple<Transform, Transform>> pairedTransforms; // Source, Animated
 
 
     void Awake()
     {
         var candidateSources = sourceHierarchyRoot.GetComponentsInChildren<Transform>().ToList();
-        pairedTransforms = animatedHierarchyRoot.GetComponentsInChildren<Transform>().Select(at => Tuple.Create(candidateSources.FirstOrDefault(ct => Utils.SegmentName(ct.name) == Utils.SegmentName(at.name)), at)).Where(tup => tup.Item1 != null).ToList();
+        pairedTransforms = animatedHierarchyRoot.GetComponentsInChildren<Transform>().Select(at => Tuple.Create(candidateSources.FirstOrDefault(ct => Utils.SegmentName(ct.name) == prefix+Utils.SegmentName(at.name)), at)).Where(tup => tup.Item1 != null).ToList();
     }
 
     void LateUpdate()
@@ -30,5 +33,7 @@ public class AnimationMimic : MonoBehaviour
         {
             target.rotation = source.rotation;
         }
+
+        OnTrainingEvent(EventArgs.Empty);
     }
 }

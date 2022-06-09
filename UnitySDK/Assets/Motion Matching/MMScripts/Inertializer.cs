@@ -368,9 +368,8 @@ public class Inertializer : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void BlendStep()
+    public void BlendStep(float deltaTime)
     {
-        float deltaTime = Time.deltaTime;
         foreach (InertializedRotation inertializedRotation in inertializedRotations)
         {
             inertializedRotation.Blend(deltaTime);
@@ -379,9 +378,8 @@ public class Inertializer : MonoBehaviour
         inertializedRootHeight.Blend(deltaTime);
     }
 
-    public void TrackStep()
+    public void TrackStep(float deltaTime)
     {
-        float deltaTime = Time.deltaTime;
         foreach (InertializedRotation inertializedRotation in inertializedRotations)
         {
             inertializedRotation.UpdateTrack(deltaTime);

@@ -14,6 +14,9 @@ public class ManualMuscles : Muscles
     [SerializeField]
     MotorUpdateRule updateRule;
 
+    [SerializeField]
+    bool useActState;
+
 
     public override int ActionSpaceSize => actuatorGameObjects.Count;
 
@@ -36,10 +39,10 @@ public class ManualMuscles : Muscles
 
         foreach (var a in actuatorGameObjects)
         {
-            a.state = new MjHingeJointState(a.actuator.Joint as MjHingeJoint);
+            a.state = useActState?  new MjActuatorState(a.actuator) : new MjHingeJointState(a.actuator.Joint as MjHingeJoint);
         }
 
-        MjScene.Instance.preUpdateEvent += UpdateTorques;
+        MjScene.Instance.ctrlCallback += UpdateTorques;
 
     }
 
@@ -48,22 +51,15 @@ public class ManualMuscles : Muscles
 
     }
 
-    private unsafe void Sync()
+    private unsafe void UpdateTorques(object Sender, MjStepArgs e)
     {
-        foreach(var a in actuatorGameObjects)
-        {
-            a.actuator.OnSyncState(MjScene.Instance.Data);
-            a.actuator.Joint.OnSyncState(MjScene.Instance.Data);
-        }
-    }
-
-    private unsafe void UpdateTorques(object Sender, EventArgs e)
-    {
-        Sync();
         //MujocoLib.mj_kinematics(MjScene.Instance.Model, MjScene.Instance.Data);
-        float[] curActions = actuatorGameObjects.Select(a => updateRule.GetTorque(a.state, new StaticState(Mathf.Deg2Rad * a.target, 0f, 0f))).ToArray();
-        ApplyActions(curActions, Time.fixedDeltaTime);
-        Sync();
+        float[] curActions = actuatorGameObjects.Select(a => updateRule.GetTorque(a.state, new StaticState((useActState? 1f : Mathf.Deg2Rad ) * a.target, 0f, 0f))).ToArray();
+        foreach ((var motor, var action) in actuatorGameObjects.Zip(curActions, Tuple.Create))
+        {
+            e.data->ctrl[motor.actuator.MujocoId] = action;
+            motor.actuator.Control = action;
+        }
     }
 
     [Serializable]

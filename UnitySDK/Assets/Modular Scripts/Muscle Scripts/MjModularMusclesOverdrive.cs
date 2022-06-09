@@ -84,7 +84,7 @@ namespace Mujoco
             return activeActRefPairs.Select(a => a.Item1.Control).ToArray();
         }
 
-        public override void OnAgentInitialize() 
+        public override void OnAgentInitialize(DReConAgent agent)
         {
             MjScene.Instance.ctrlCallback += UpdateTorque;
             actuators = Actuators;

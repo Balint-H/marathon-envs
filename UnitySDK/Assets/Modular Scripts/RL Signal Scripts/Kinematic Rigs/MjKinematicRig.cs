@@ -26,6 +26,9 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
     [SerializeField]
     private int targetId;
 
+    [SerializeField]
+    private bool intializeAlone;
+
     // Private, since other scripts should reference rigidbodies from the hierarchy, and not depend on KinematicRig implementation if possible
     private IReadOnlyList<Transform> riggedTransforms;
     private IReadOnlyList<Transform> trackedTransforms;
@@ -53,6 +56,11 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
     }
 
 
+    private void Awake()
+    {
+        if (intializeAlone) OnAgentInitialize();
+    }
+
     public void OnAgentInitialize()
     {
         Func<string, string> MocapName = animatedName => $"{prefix}{Utils.SegmentName(animatedName)}";
@@ -64,7 +72,7 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
         bodies = ragdollRoot.GetComponentsInChildren<MjBody>().ToList();
     }
 
-    public unsafe void TrackKinematics()
+    public virtual unsafe void TrackKinematics()
     {
         foreach ((var mjb, var tr) in riggedTransforms.Zip(trackedTransforms, Tuple.Create))
         {
@@ -81,7 +89,7 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
 
 
 
-    public void TeleportRoot(Vector3 position, Quaternion rotation)
+    public unsafe void TeleportRoot(Vector3 position, Quaternion rotation)
     {
         
 
@@ -92,12 +100,9 @@ public class MjKinematicRig : MonoBehaviour, IKinematicReference
 
         if (targetId > -1)
         {
-            //Debug.Log(ragdollRoot.GetComponentInChildren<MjFreeJoint>().MujocoId);
             MjState.TeleportMjRoot(targetId, posLag + position, rotLag * rotation);
             return;
         }
-
-
 
         MjState.TeleportMjRoot(ragdollRoot.GetComponentInChildren<MjFreeJoint>(), posLag + position, rotLag * rotation);
     }

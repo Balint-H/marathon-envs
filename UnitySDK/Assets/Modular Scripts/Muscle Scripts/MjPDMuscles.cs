@@ -11,7 +11,7 @@ namespace Mujoco
         [SerializeField]
         public float kv;
 
-        [HideInInspector, SerializeField]
+        [SerializeField]
         public Transform kinematicRef;
 
         [SerializeField]
@@ -35,9 +35,9 @@ namespace Mujoco
             return pdActuators.Select(pd => pd.CurrentAction).ToArray();
         }
 
-        public override void OnAgentInitialize()
+        public override void OnAgentInitialize(DReConAgent agent)
         {
-            base.OnAgentInitialize();
+            base.OnAgentInitialize(null);
             pdActuators = actuators.Select(act => new PDActuator(act, FindReference(act), useBaseline)).ToList();
         }
 

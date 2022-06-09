@@ -33,6 +33,9 @@ namespace Mujoco
         [SerializeField]
         bool trackVelocity;
 
+        [SerializeField]
+        bool updateAlone;
+
         private bool IsSubsetDefined { get => (actuatorSubset != null && actuatorSubset.Count > 0); }
 
         public override int ActionSpaceSize => IsSubsetDefined && kinematicRef && trackPosition ? actuatorSubset.Count : actuatorRoot.GetComponentsInChildren<MjActuator>().ToList().Count;
@@ -81,7 +84,7 @@ namespace Mujoco
             return activeActRefPairs.Select(a => a.Item1.Control).ToArray();
         }
 
-        public override void OnAgentInitialize() 
+        public override void OnAgentInitialize(DReConAgent agent)
         {
             MjScene.Instance.ctrlCallback += UpdateTorque;
             actuators = Actuators;
@@ -108,5 +111,15 @@ namespace Mujoco
         {
             return kinematicRef? kinematicRef.GetComponentsInChildren<MjHingeJoint>().First(rj => rj.name.Contains(act.Joint.name)) : null;
         }
+
+        private void Awake()
+        {
+            if (updateAlone)
+            {
+                nextActions = Enumerable.Repeat(0f, ActionSpaceSize).ToArray();
+                OnAgentInitialize(null);
+            }
+        }
+
     }
 }

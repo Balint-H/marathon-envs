@@ -25,6 +25,7 @@ public class BasicSetupHandler : DelayableEventHandler
 
 	IKinematicReference kinematicRig;
 
+
 	[SerializeField]
 	Vector3 resetOrigin;
 
@@ -33,6 +34,9 @@ public class BasicSetupHandler : DelayableEventHandler
 
 	[SerializeField]
 	bool shouldResetPosition = true;
+
+	[SerializeField]
+	Vector3 offset;
 
 	Quaternion resetRotation;
 
@@ -51,14 +55,14 @@ public class BasicSetupHandler : DelayableEventHandler
     public void HandleSetup(object sender, EventArgs eventArgs)
     {
 		if (IsWaiting) return;
-
 		//First we move the animation back to the start 
 
 		//Debug.Log("Resetting Animation Parent!");
 		if (shouldResetPosition) referenceAnimationParent.position = resetOrigin;
 
 		if (shouldResetRotation) referenceAnimationParent.rotation = resetRotation;
-		kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
+		if (shouldResetPosition)
+			kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
 
         if (framesToWait > 0)
         {
@@ -70,7 +74,7 @@ public class BasicSetupHandler : DelayableEventHandler
 		if (shouldResetPosition) kineticChainToReset.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
 
         //We copy the rotations, velocities and angular velocities from the kinematic reference (which has the "same" pose as the animation).
-        kineticChainToReset.CopyKinematicsFrom(kinematicRig);
+        kineticChainToReset.CopyKinematicsFrom(kinematicRig, offset);
 
 		//We teleport the kinematic reference as well, so velocities are not tracked in the move. Since we don't need to change rotation we use to position only version.
 		if (shouldResetPosition)  kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
@@ -87,7 +91,7 @@ public class BasicSetupHandler : DelayableEventHandler
 
 		//Debug.Log("Copying Kinematics!");
 		//We copy the rotations, velocities and angular velocities from the kinematic reference (which has the "same" pose as the animation).
-		kineticChainToReset.CopyKinematicsFrom(kinematicRig);
+		kineticChainToReset.CopyKinematicsFrom(kinematicRig, offset);
 
 		//Debug.Log("Teleporting Kinematic Root just in case!");
 		kinematicRig.TeleportRoot(referenceAnimationRoot.position, referenceAnimationRoot.rotation);
@@ -99,7 +103,7 @@ public class BasicSetupHandler : DelayableEventHandler
     private interface IResettable
     {
         public void TeleportRoot(Vector3 position, Quaternion rotation);
-        public void CopyKinematicsFrom(IKinematicReference reference);
+        public void CopyKinematicsFrom(IKinematicReference reference, Vector3 offset);
 
     }
 
@@ -114,7 +118,7 @@ public class BasicSetupHandler : DelayableEventHandler
             this.articulationBodies = articulationBodies;
         }
 
-        public void CopyKinematicsFrom(IKinematicReference referenceGeneralRig)
+        public void CopyKinematicsFrom(IKinematicReference referenceGeneralRig, Vector3 offset)
         {
 			//Set root kinematics
 			KinematicRig referenceRig = referenceGeneralRig as KinematicRig; // Right now cant work with any other IKinematicReference, defeating the purpose somewhat... The groundwork is layed down already, extending IKinematic with local ref frame values
@@ -229,10 +233,22 @@ public class BasicSetupHandler : DelayableEventHandler
 		{
 			this.rootBody = rootBody;
 		}
-		public void CopyKinematicsFrom(IKinematicReference reference)
+		public void CopyKinematicsFrom(IKinematicReference reference, Vector3 offset)
         {
 			var mjReference = reference as MjKinematicRig;
 			var sourceKinematics = MjState.GetMjKinematics(mjReference.Bodies[0]);
+
+			if(offset != Vector3.zero)
+            {
+				var mjOffset = MjEngineTool.MjVector3(offset);
+
+				var rootPos = sourceKinematics.Item1.First();
+				rootPos[0] += mjOffset[0];
+				rootPos[1] += mjOffset[1];
+				rootPos[2] += mjOffset[2];
+				sourceKinematics.Item1 = sourceKinematics.Item1.Skip(1).Prepend(rootPos);
+            }
+
 			MjScene.Instance.SetMjKinematics(rootBody, sourceKinematics.Item1, sourceKinematics.Item2);
         }
 

@@ -14,43 +14,66 @@ public class AutoInput : MonoBehaviour, IMMInput
 
     int landmarkIdx;
     protected Vector3 hitPoint;
-    protected bool clickMove;
+    protected bool targetIsActive;
     protected DampedTrajectory trajectory;
     [SerializeField]
     protected TrackCircle circle;
 
     [SerializeField]
-    Transform fauxRootInWorld;
+    public Transform fauxRootInWorld;
 
     [SerializeField]
     float distThreshold;
 
+    [SerializeField]
+    WaitSettings waitSettings;
+
     private Vector2 analogueDirection;
 
-    public  bool ClickMove
+    public  bool TargetIsActive
     {
-        get => clickMove;
+        get => targetIsActive;
         set
         {
-            if (clickMove != value)
+            if (targetIsActive != value)
             {
                 if (value == true)
                 {
                     circle.enabled = true;
                     circle.transform.position = new Vector3(hitPoint.x, 0.05f, hitPoint.z);
-                    clickMove = true;
+                    targetIsActive = true;
                 }
                 else
                 {
-                    clickMove = false;
+                    targetIsActive = false;
+                    float waitTime = waitSettings.SampleWaitTime();
+                    if (waitTime == 0f)
+                    {
+                        hitPoint = GetNextPoint();
 
-                    hitPoint = GetNextPoint();
+                        TargetIsActive = true;
+                    }
+                    else
+                    {
+                        StartCoroutine(SetNewTarget(waitTime));
+                    }
 
-                    ClickMove = true;
+                    
+                   
                 }
             }
 
         }
+    }
+
+    IEnumerator SetNewTarget(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
+        hitPoint = GetNextPoint();
+
+                        TargetIsActive = true;
+
     }
 
     public IEnumerable<Vector2> CurrentTrajectoryAndDirection
@@ -61,22 +84,30 @@ public class AutoInput : MonoBehaviour, IMMInput
         }
     }
 
+    public IEnumerable<Vector2> CurrentTrajectory
+    {
+        get
+        {
+            return trajectory.CurrentTrajectory;
+        }
+    }
+
     private void Awake()
     {
         trajectory = new DampedTrajectory();
-        clickMove = true;
-        ClickMove = false;
+        targetIsActive = true;
+        TargetIsActive = false;
     }
 
     private void Update()
     {
-        if (ClickMove)
+        if (TargetIsActive)
         {
             Vector3 differenceVector = fauxRootInWorld.position - hitPoint;
             if (differenceVector.magnitude < 1.4)
             {
                 analogueDirection = Vector2.zero;
-                ClickMove = false;
+                TargetIsActive = false;
             }
             else
             {
@@ -153,6 +184,17 @@ public class AutoInput : MonoBehaviour, IMMInput
             }
         }
 
+        public IEnumerable<Vector2> CurrentTrajectory
+        {
+            get
+            {
+                c1 = localVelocity - targetVelocity;
+                c2 = localAcceleration - c1 * eignv;
+                c3 = c2 - c1 * eignv;
+                return TrajectoryHorizon;
+            }
+        }
+
         public void UpdateStep(float dt)
         {
             c1 = localVelocity - targetVelocity;
@@ -208,6 +250,31 @@ public class AutoInput : MonoBehaviour, IMMInput
             }
         }
     }
+
+    [System.Serializable]
+    struct WaitSettings
+    {
+        [SerializeField, Range(0,1)]
+        float waitProbability;
+
+        [SerializeField, Tooltip("In seconds")]
+        Vector2 waitRange;
+
+        public float SampleWaitTime()
+        {
+            if (waitProbability == 0f) return 0;
+            float a = Random.value;
+            if (a < (1f - waitProbability)) return 0f;
+            else
+            {
+                float m = (waitRange.y - waitRange.x) / waitProbability;
+                float b = waitRange.y - m;
+                return m * a + b;
+            }
+        }
+    }
+
+
 
 }
 

@@ -10331,8 +10331,8 @@ MonoBehaviour:
       FwdInv: 1
       SensorNoise: 1
   GlobalSizes:
-    Njmax: 500
-    Nconmax: 100
+    Njmax: 1000
+    Nconmax: 1000
     Nstack: 0
 --- !u!1 &5989663178646238357
 GameObject:
@@ -16440,6 +16440,7 @@ MonoBehaviour:
   kinematicRigObject: {fileID: 8379573091453376946}
   resetOrigin: {x: 0, y: 0, z: 0}
   shouldResetRotation: 1
+  shouldResetPosition: 1
 --- !u!1 &6586864498062927917
 GameObject:
   m_ObjectHideFlags: 0
@@ -17150,6 +17151,7 @@ MonoBehaviour:
   simulationTransform: {fileID: 5989663179088553150}
   kinematicHead: {fileID: 3508863639509690197}
   simulationHead: {fileID: 5989663179726994826}
+  useHeightOnly: 0
 --- !u!1 &7871898060241881296
 GameObject:
   m_ObjectHideFlags: 0
@@ -17285,7 +17287,8 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   prefix: K_Mocap_
   ragdollRoot: {fileID: 3508863638873063009}
-  targetId: 4
+  targetId: -1
+  intializeAlone: 0
 --- !u!114 &9151853173301854999
 MonoBehaviour:
   m_ObjectHideFlags: 0

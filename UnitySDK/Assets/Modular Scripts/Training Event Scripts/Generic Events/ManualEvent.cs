@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class ManualEvent : TrainingEvent
 {
+    [SerializeField]
+    public TrainingEventHandler defaultHandler;
 
 }

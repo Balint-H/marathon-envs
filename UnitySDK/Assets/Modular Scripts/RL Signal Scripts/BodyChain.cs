@@ -22,8 +22,9 @@ namespace Kinematic
         public IEnumerable<Vector3> CentersOfMass {get => chain.Select(k => k.CenterOfMass);}
         public IEnumerable<Vector3> Velocities {get => chain.Select(k => k.Velocity);}
         public IEnumerable<Matrix4x4> TransformMatrices { get => chain.Select(k => k.TransformMatrix); }
-        public Vector3 RootForward { get => chain[0].TransformMatrix.GetColumn(2);  }
+        public Vector3 RootForward { get => chain[0].Forward; }
 
+        public IEnumerable<string> Names { get => chain.Select(k => k.Name); }
         public BodyChain() { }
 
         public BodyChain(Transform chainRoot)
@@ -94,6 +95,8 @@ namespace Kinematic
                                             new RigidbodyAdapter(transform.GetComponent<Rigidbody>()) :
                                                 new MjBodyAdapter(transform.GetComponent<MjBody>()));
         }
+
+        public Vector3 Forward { get; }
     }
 
     public class RigidbodyAdapter : IKinematic
@@ -119,6 +122,8 @@ namespace Kinematic
         public string Name => rigidbody.name;
 
         public Matrix4x4 TransformMatrix => rigidbody.transform.localToWorldMatrix;
+
+        public Vector3 Forward => rigidbody.transform.forward;
 
         public Vector3 GetPointVelocity(Vector3 worldPoint)
         {
@@ -166,6 +171,7 @@ namespace Kinematic
             return articulationBody.GetRelativePointVelocity(localPoint);
         }
 
+        public Vector3 Forward => articulationBody.transform.forward;
         public GameObject gameObject { get => articulationBody.gameObject; }
     }
 
@@ -206,7 +212,7 @@ namespace Kinematic
 
         public Matrix4x4 TransformMatrix => mjBody.GetTransformMatrix() * inertiaRelMatrix;
 
-        
+        public Vector3 Forward => mjBody.GetTransformMatrix().GetColumn(2);
 
         public Vector3 GetPointVelocity(Vector3 worldPoint)
         {

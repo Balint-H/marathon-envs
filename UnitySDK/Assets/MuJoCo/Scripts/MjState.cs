@@ -13,7 +13,7 @@ namespace Mujoco
         {
             MujocoLib.mjModel_* Model = mjScene.Model;
             MujocoLib.mjData_* Data = mjScene.Data;
-            var joints = rootBody.GetComponentsInChildren<MjBaseJoint>();
+            var joints = rootBody.GetComponentsInChildren<MjBaseJoint>().OrderBy(j => j.MujocoName);
             var positions = new List<double[]>();
             var velocities = new List<double[]>();
             foreach (var joint in joints)
@@ -63,7 +63,7 @@ namespace Mujoco
         {
             MujocoLib.mjModel_* Model = mjScene.Model;
             MujocoLib.mjData_* Data = mjScene.Data;
-            var joints = rootBody.GetComponentsInChildren<MjBaseJoint>();
+            var joints = rootBody.GetComponentsInChildren<MjBaseJoint>().OrderBy(j => j.MujocoName);
             foreach ((var joint, (var position, var velocity)) in joints.Zip( positions.Zip(velocities, Tuple.Create), Tuple.Create))
             {
                 switch (Model->jnt_type[joint.MujocoId])
@@ -273,6 +273,13 @@ namespace Mujoco
             return act.Rad2Length((float)(Data -> qacc[act.Joint.DofAddress]));
         }
 
+        public static unsafe float GetForce(this MjActuator act)
+        {
+            MujocoLib.mjData_* Data = mjScene.Data;
+
+            return (float)Data->actuator_force[act.MujocoId];
+        }
+
         public static unsafe float GetAccelerationRad(this MjHingeJoint j)
         {
             MujocoLib.mjData_* Data = mjScene.Data;
@@ -314,9 +321,19 @@ namespace Mujoco
             return length / act.CommonParams.Gear[g];
         }
 
-        public static float LengthInRad(this MjActuator act, int g = 0)
+        public static unsafe float GetVelocity(this MjActuator act)
         {
-            return act.Length / act.CommonParams.Gear[g];
+            return (float) mjScene.Data->actuator_velocity[act.MujocoId];
+        }
+
+        public unsafe static float LengthInRad(this MjActuator act, int g = 0)
+        {
+            return (float) mjScene.Data -> actuator_length[act.MujocoId] / act.CommonParams.Gear[g];
+        }
+
+        public unsafe static float GetLength(this MjActuator act)
+        {
+            return (float)mjScene.Data->actuator_length[act.MujocoId];
         }
 
         public static float Length2Deg(this MjActuator act, float length, int g=0)
@@ -326,7 +343,7 @@ namespace Mujoco
 
         public static float LengthInDeg(this MjActuator act, int g = 0)
         {
-            return act.Length / act.CommonParams.Gear[g] * Mathf.Rad2Deg;
+            return act.LengthInDeg(g) / act.CommonParams.Gear[g] * Mathf.Rad2Deg;
         }
 
         public static unsafe int GetDoFAddress(this MjBaseJoint j)

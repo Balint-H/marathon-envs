@@ -59,9 +59,9 @@ namespace MotorUpdate
             this.mjActuator = mjActuator;
         }
 
-        public float Velocity => mjActuator.Velocity;
+        public float Velocity => mjActuator.GetVelocity();
 
-        public float Position => mjActuator.Length;
+        public float Position => mjActuator.GetLength();
 
         public float Acceleration => mjActuator.GetAcceleration(); 
 
